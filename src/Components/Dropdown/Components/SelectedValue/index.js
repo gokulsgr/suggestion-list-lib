@@ -19,6 +19,7 @@ const Dropdown = styled.div`
         padding-right: 10px;
         color: #687385;
         font-weight: 500;
+        width:100%;
     }
     svg {
         display: flex;
