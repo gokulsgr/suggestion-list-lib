@@ -1,0 +1,169 @@
+.select-type{
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  background-color: #EBEBEB;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 12px 1.25rem;
+  font-size: 14px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+.suggestion-block {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  .clear-text {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  label {
+      font-size: 18px;
+      width: 100%;
+      color:  #434343;
+  }
+  ul {
+      li {
+          list-style-type: none;
+          padding: 7px 15px;
+          cursor: pointer;
+          font-size: 15px;
+          color: #687385;
+          align-items: center;
+          display: flex;
+          &.focus,
+          &.active,
+          &:hover {
+              background-color: #F6F6F6;
+              color: #687385;
+              outline: none;
+
+          }
+          .avatar {
+              width: 30px;
+              height: 30px;
+              overflow: hidden;
+              border-radius: 50%;
+              margin-right: 15px;
+          }
+          .check-indicator {
+              margin-right: 10px;
+          }
+      }
+      &.active {
+          display: block;
+      }
+  }
+  .select-type{
+      display: flex;
+      align-items: center;
+      max-width: 280px;
+      width: 100%;
+      background-color: #EBEBEB;
+      justify-content: space-between;
+      border-radius: 25px;
+      padding: 12px 1.25rem;
+      font-size: 14px;
+      margin-top: 12px;
+      cursor: pointer;
+      span {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          padding-right: 10px;
+          color: #687385;
+          font-weight: 500;
+      }
+      svg {
+      display: flex;
+      flex-shrink: 0;
+      }
+  }
+}
+
+.form-check-label {
+  cursor: pointer;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  input {
+      position: absolute; 
+      opacity: 0;
+      width: 25px;
+      height: 25px;
+      margin: 0;
+      display: none;
+  }
+  span {
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+  }
+  // Box
+  span:before {
+      content: '';
+      margin-top: 0px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 21px;
+      height: 21px;
+      background: rgba(151, 151, 151, 0.17);
+      border-radius: 3px;
+      border: 2px solid #CAD2DE;
+      background-color: transparent;
+      @include bp-xs {
+        margin-right: 6px;
+      }
+  }
+  // Box checked
+  input {
+      &:checked + span:before {
+          background: $theme-color;
+          border: 2px solid $theme-color;
+      }
+  }
+
+  // Disabled state label.
+  input {
+      &:disabled + span {
+          color: #b8b8b8;
+          cursor: auto;
+      }
+  }
+  // Disabled box.
+  input {
+      &:disabled + span:before {
+          box-shadow: none;
+          background: #ddd;
+      }
+  }
+  // Checkmark. Could be replaced with an image
+  input {
+      &:checked + span:after {
+          content: '';
+          position: absolute;
+          background: $theme-color;
+          width: 21px;
+          height: 21px;
+          background-image: url(#{$image-path}/svg/checkbox.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          border: 2px solid $theme-color;
+          border-radius: 3px;
+      }
+  }
+}
